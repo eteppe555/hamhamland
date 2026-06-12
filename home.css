@@ -1,0 +1,104 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: aqua;
+  text-align: center;
+
+  /* This is the classic Roblox arrow embedded directly as a tiny image code */
+cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 32 32'%3E%3Cpath d='M2,2 L2,26 L9,19 L15,30 L19,28 L13,17 L22,17 Z' fill='white' stroke='black' stroke-width='2' stroke-linejoin='miter'/%3E%3C/svg%3E") 2 2, auto;}
+
+a, button, input[type="submit"], [role="button"] {
+  /* A real, perfectly normal, classic cartoon pointer image */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 32 32'%3E%3Cpath d='M2,2 L2,26 L9,19 L15,30 L19,28 L13,17 L22,17 Z' fill='white' stroke='black' stroke-width='2' stroke-linejoin='miter'/%3E%3C/svg%3E") 2 2, auto;}
+
+h1 {
+  font-family: Comic Sans MS;
+  color: yellow;
+}
+.title {
+  text-align: center;
+  color: #FF0000;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-weight: bold;
+  line-height: 1.1;            
+  
+  text-shadow: 
+    1px 1px 0px #900000,       
+    2px 2px 0px #900000,       
+    3px 3px 0px #900000,       
+    4px 4px 0px #900000,       
+    5px 5px 0px #900000,       
+    6px 6px 0px #900000,       
+    7px 7px 0px #900000,       
+    8px 8px 0px #900000,       
+    9px 9px 12px rgba(0, 0, 0, 0.5); 
+}
+
+.title span {
+  display: block;
+  font-size: 70px; 
+}
+
+.title .small-text {
+  font-size: 35px;             
+  text-transform: lowercase; 
+  margin: 10px 0;     
+}
+
+ul {
+  font-family: Comic Sans MS;
+  font-size: 2rem;
+  list-style-type: none;  /* Removes the bullet points */
+  padding: 0;             /* Removes default left padding indentation */
+  margin: 0;              /* Removes default browser margins */
+  text-align: center;     /* Centers the text horizontally */
+}
+
+ul li:hover a {
+  color: yellow;
+}
+
+.trail-star {
+  position: absolute;
+  font-size: 24px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: vanishInstant 0.4s steps(1) forwards;
+}
+
+/* Creates the viewing window */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: transparent;
+  padding: 10px 0;
+}
+
+/* Forces the two tracks to align side-by-side and loops infinitely */
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 10s linear infinite; /* Increased to 10s so it doesn't scroll too fast */
+}
+
+/* Keeps the text layout consistent */
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marquee-content span {
+  font-size: 18px;
+}
+
+/* Moves exactly halfway (the length of one track) before looping */
+@keyframes infinite-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
