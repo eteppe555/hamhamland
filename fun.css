@@ -15,39 +15,51 @@ body {
   animation: pure-blink 0.5s steps(2, start) infinite, textColors 1s steps(1, end) infinite; 
 }
 
-/* 1. The Main Container holding all the doors */
+/* The main wrapper that lines the 3 doors up next to each other */
 .image-gallery {
   display: flex;
-  justify-content: center; /* Centers the whole group */
-  align-items: flex-start; /* Aligns them nicely at the top */
-  gap: 40px; /* Uniform spacing between each door unit */
+  justify-content: center; /* Centers the whole layout on the screen */
+  align-items: flex-start; /* Aligns items neatly at the top */
+  gap: 50px;              /* The perfect, unshakeable gap between doors */
   width: 100%; 
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
-/* 2. The Individual Door Unit (Image + Text locked together) */
-.door-unit {
+/* The vertical stack container for each individual door group */
+.door-card {
   display: flex;
-  flex-direction: column; /* Stacks image on top, text on bottom */
-  align-items: center; /* Centers items horizontally within the unit */
-  width: 25%; /* Keeps them equal width */
+  flex-direction: column; /* Forces elements inside to stack vertically */
+  align-items: center;    /* Centers the door, text, and gif horizontally */
+  width: 25%;             /* Ensures all three doors take up equal space */
 }
 
-/* 3. The links/images inside the unit */
-.door-unit a, .door-unit img {
-  width: 100%; /* Spans the full width of the door-unit */
-  height: auto; 
-  object-fit: contain; 
+/* Controls the clickable main door image */
+.door-card a {
+  width: 100%;
 }
 
-/* 4. The labels underneath */
-.door-unit h1 {
-  color: yellow; 
-  text-align: center; 
-  font-size: 1.5rem; 
-  margin: 10px 0 0 0; /* Adds a tiny bit of space above the text */
+.main-door {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
+/* Controls the titles */
+.door-card h1 {
+  color: yellow;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 15px 0; /* Gives nice spacing above and below the text */
+}
+
+/* Controls the animated GIFs at the bottom */
+.door-gif {
+  width: 80%; /* Slightly smaller than the door for a nice balanced look */
+  height: auto;
+  object-fit: contain;
+}
+
+/* --- ANIMATIONS --- */
 @keyframes pure-blink {
   to {
     visibility: hidden;
