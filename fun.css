@@ -1,59 +1,52 @@
-body{
+body {
   padding: 25px;
   background-image: url(https://www.gifstop.com/images/backgrounds/starsblue.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: Comic Sans MS;
+  font-family: "Comic Sans MS", sans-serif;
 }
+
 .title {
-	color: yellow;
+  color: yellow;
   font-style: italic;
   text-align: center;
   font-size: 2rem;
-  animation: pure-blink 0.5s steps(2, start) infinite; 
-  animation: textColors 1s steps(1, end) infinite;
+  animation: pure-blink 0.5s steps(2, start) infinite, textColors 1s steps(1, end) infinite; 
 }
 
+/* 1. The Main Container holding all the doors */
 .image-gallery {
   display: flex;
-  justify-content: center; /* Centers the group horizontally */
-  align-items: center; /* Vertically aligns images in the middle */
-  gap: 60px; /* Forces exactly 60px of equal space between images */
-  width: 100%; /* Ensures the container spans full width */
-}
-
-.image-gallery a {
-  width: 25%; /* Gives each image an equal width portion */
-  height: auto; /* Maintains original image aspect ratios */
-}
-
-.doorimgs, .doornames { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 40px; 
+  justify-content: center; /* Centers the whole group */
+  align-items: flex-start; /* Aligns them nicely at the top */
+  gap: 40px; /* Uniform spacing between each door unit */
   width: 100%; 
+  margin-top: 20px;
 }
 
-.doornames { 
-  color: yellow; 
+/* 2. The Individual Door Unit (Image + Text locked together) */
+.door-unit {
+  display: flex;
+  flex-direction: column; /* Stacks image on top, text on bottom */
+  align-items: center; /* Centers items horizontally within the unit */
+  width: 25%; /* Keeps them equal width */
 }
 
-.doornames h1 {
-  width: 30%; /* Matches image width */
-  text-align: center; /* Centers text under the image */
-  font-size: 1.5rem; /* Prevents text from being too massive */
-  margin: 0; /* Clears default browser spacing */
-}
-
-.doorimgs img {
-  width: 30%; /* Matches text width */
+/* 3. The links/images inside the unit */
+.door-unit a, .door-unit img {
+  width: 100%; /* Spans the full width of the door-unit */
   height: auto; 
   object-fit: contain; 
 }
 
-
+/* 4. The labels underneath */
+.door-unit h1 {
+  color: yellow; 
+  text-align: center; 
+  font-size: 1.5rem; 
+  margin: 10px 0 0 0; /* Adds a tiny bit of space above the text */
+}
 
 @keyframes pure-blink {
   to {
@@ -62,8 +55,8 @@ body{
 }
 
 @keyframes textColors {
-  0%   { color: #ff0000; } /* Red */
-  33%  { color: #00ff00; } /* Green */
-  66%  { color: #0000ff; } /* Blue */
-  100% { color: #ff0000; } /* Matches 0% for a smooth loop */
+  0%   { color: #ff0000; } 
+  33%  { color: #00ff00; } 
+  66%  { color: #0000ff; } 
+  100% { color: #ff0000; } 
 }
