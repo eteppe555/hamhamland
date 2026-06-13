@@ -1,0 +1,69 @@
+body{
+  padding: 25px;
+  background-image: url(https://www.gifstop.com/images/backgrounds/starsblue.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: Comic Sans MS;
+}
+.title {
+	color: yellow;
+  font-style: italic;
+  text-align: center;
+  font-size: 2rem;
+  animation: pure-blink 0.5s steps(2, start) infinite; 
+  animation: textColors 1s steps(1, end) infinite;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center; /* Centers the group horizontally */
+  align-items: center; /* Vertically aligns images in the middle */
+  gap: 60px; /* Forces exactly 60px of equal space between images */
+  width: 100%; /* Ensures the container spans full width */
+}
+
+.image-gallery a {
+  width: 25%; /* Gives each image an equal width portion */
+  height: auto; /* Maintains original image aspect ratios */
+}
+
+.doorimgs, .doornames { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 40px; 
+  width: 100%; 
+}
+
+.doornames { 
+  color: yellow; 
+}
+
+.doornames h1 {
+  width: 30%; /* Matches image width */
+  text-align: center; /* Centers text under the image */
+  font-size: 1.5rem; /* Prevents text from being too massive */
+  margin: 0; /* Clears default browser spacing */
+}
+
+.doorimgs img {
+  width: 30%; /* Matches text width */
+  height: auto; 
+  object-fit: contain; 
+}
+
+
+
+@keyframes pure-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes textColors {
+  0%   { color: #ff0000; } /* Red */
+  33%  { color: #00ff00; } /* Green */
+  66%  { color: #0000ff; } /* Blue */
+  100% { color: #ff0000; } /* Matches 0% for a smooth loop */
+}
